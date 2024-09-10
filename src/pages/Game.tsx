@@ -2,16 +2,18 @@ import {Unity, useUnityContext} from "react-unity-webgl";
 
 function Game() {
     const { unityProvider, sendMessage } = useUnityContext({
-        loaderUrl: "/UnityReact.loader.js",
-        dataUrl: "/UnityReact.data.unityweb",
-        frameworkUrl: "/UnityReact.framework.js.unityweb",
-        codeUrl: "/UnityReact.wasm.unityweb",
+        loaderUrl: "/SpaceWar.loader.js",
+        dataUrl: "/SpaceWar.data.unityweb",
+        frameworkUrl: "/SpaceWar.framework.js.unityweb",
+        codeUrl: "/SpaceWar.wasm.unityweb",
     });
 
-    function handleClickSpawnEnemies() {
-        sendMessage("GameObject", "SpawnEnemies");
+    function handleRestartGame() {
+        sendMessage("GameManager", "RestartGame");
     }
-
+    function handlePause() {
+        sendMessage("GameManager", "TogglePause");
+    }
 
     return (
         <>
@@ -19,9 +21,11 @@ function Game() {
                 <div className="centered-content">
                     <h1 className="centered-title">React + Unity / Tecsup</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
-
                     <div className="centered-content">
-                        <button onClick={handleClickSpawnEnemies}>Spawn Enemies</button>
+                        <button onClick={handleRestartGame}>Restart Game</button>
+                    </div>
+                    <div className="centered-content">
+                        <button onClick={handlePause}>Pause</button>
                     </div>
 
                 </div>
