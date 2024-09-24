@@ -10,7 +10,13 @@ function MainNav() {
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/game">Game</Link>
+                            <Link className="nav-link" to="/SpaceWar">SpaceWar</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Yu-Gi-Oh Memory Game">Yu-Gi-Oh Memory Game</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Sevenger Clicker">Sevenger Clicker</Link>
                         </li>
                     </ul>
                 </div>

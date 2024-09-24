@@ -5,6 +5,8 @@ import MainHeader from "./common/MainHeader.tsx";
 import MainNav from "./common/MainNav.tsx";
 import MainFooter from "./common/MainFooter.tsx";
 import Game from "./pages/Game.tsx";
+import Game2 from "./pages/Game2.tsx";
+import Game3 from "./pages/Game3.tsx";
 
 function App() {
     return (
@@ -14,7 +16,9 @@ function App() {
                 <MainNav />
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/game' element={<Game/>}/>
+                    <Route path='/SpaceWar' element={<Game/>}/>
+                    <Route path='/Yu-Gi-Oh Memory Game' element={<Game2/>}/>
+                    <Route path='/Sevenger Clicker' element={<Game3/>}/>
                 </Routes>
                 <MainFooter />
             </BrowserRouter>
