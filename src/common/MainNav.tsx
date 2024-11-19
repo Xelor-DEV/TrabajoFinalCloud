@@ -19,7 +19,13 @@ function MainNav() {
                             <Link className="nav-link" to="/Sevenger Clicker">Sevenger Clicker</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" to="/Fruits Catch">Fruits Catch</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Bounce Invaders">Bounce Invaders</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Login">Login</Link>
                         </li>
                     </ul>
                 </div>
