@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import BASE_URL from "../services/WebServices.tsx";
 
 interface LoginProps {
     onLogin: (userId: number) => void;
@@ -13,7 +14,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         event.preventDefault();
         const dataForm = new FormData(event.currentTarget);
 
-        const rutaServicio = "http://localhost/db_create_login.php";
+        const rutaServicio = `${BASE_URL}/db_create_login.php`;
         let formData = new FormData();
         formData.append("username", dataForm.get("usuario") as string);
         formData.append("password", dataForm.get("clave") as string);
@@ -25,8 +26,12 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             if (result.error) {
                 alert(`Error: ${result.error}`);
             } else if (result.message === "Login successful" && result.userId) {
-                alert("Bienvenido");
+                const username = dataForm.get("usuario") as string;
+                alert(`Bienvenido, ${username}`);
                 setUserId(result.userId);
+                localStorage.setItem("userId", result.userId);
+                localStorage.setItem("username", dataForm.get("usuario") as string);
+                window.dispatchEvent(new Event('storage'));
                 onLogin(result.userId);
                 navigate("/");
             } else if (result.message === "Login failed") {
@@ -37,6 +42,13 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             alert("Error en la conexión al servidor.");
         }
     };
+
+    const username = localStorage.getItem("username");
+
+    if (username) {
+        return <p>Ya estás logeado {username}</p>;
+    }
+
     return (
         <section className="padded">
             <div className="container">

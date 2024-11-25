@@ -15,6 +15,10 @@ function Game() {
         sendMessage("GameManager", "TogglePause");
     }
 
+
+
+
+
     return (
         <>
             <div className="centered-container">
