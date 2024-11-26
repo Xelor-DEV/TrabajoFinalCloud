@@ -1,7 +1,8 @@
 import {Unity, useUnityContext} from "react-unity-webgl";
+import { useEffect } from "react";
 
 function Game() {
-    const { unityProvider, sendMessage } = useUnityContext({
+    const {  unityProvider, sendMessage, isLoaded } = useUnityContext({
         loaderUrl: "/SpaceWar.loader.js",
         dataUrl: "/SpaceWar.data.unityweb",
         frameworkUrl: "/SpaceWar.framework.js.unityweb",
@@ -15,9 +16,18 @@ function Game() {
         sendMessage("GameManager", "TogglePause");
     }
 
+    function sendUserId() {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+            sendMessage("GameManager", "ReceiveUserId", userId);
+        }
+    }
 
-
-
+    useEffect(() => {
+        if (isLoaded) {
+            sendUserId();
+        }
+    }, [isLoaded]);
 
     return (
         <>
@@ -26,10 +36,10 @@ function Game() {
                     <h1 className="centered-title">SpaceWar</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <div className="centered-content">
-                        <button onClick={handleRestartGame}>Restart Game</button>
+                        <button onClick={handleRestartGame}>Restart (Game Over Only)</button>
                     </div>
                     <div className="centered-content">
-                        <button onClick={handlePause}>Pause</button>
+                        <button onClick={handlePause}>Pause (Only Playing, Not at Game Over)</button>
                     </div>
 
                 </div>
