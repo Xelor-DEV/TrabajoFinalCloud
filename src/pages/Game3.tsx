@@ -4,14 +4,18 @@ import "./styles.css"; // Asegúrate de importar el archivo CSS
 
 function Game3() {
     const { unityProvider, sendMessage, isLoaded, unload  } = useUnityContext({
-        loaderUrl: "/CLICK.loader.js",
-        dataUrl: "/CLICK.data.unityweb",
-        frameworkUrl: "/CLICK.framework.js.unityweb",
-        codeUrl: "/CLICK.wasm.unityweb",
+        loaderUrl: "/SevengerClicker.loader.js",
+        dataUrl: "/SevengerClicker.data.unityweb",
+        frameworkUrl: "/SevengerClicker.framework.js.unityweb",
+        codeUrl: "/SevengerClicker.wasm.unityweb",
     });
 
     function handleRestartGame() {
         sendMessage("GameManager", "RestartGame");
+    }
+
+    function handleSaveScore() {
+        sendMessage("GameManager", "RegisterScore");
     }
 
     function sendUserId() {
@@ -40,14 +44,15 @@ function Game3() {
                     <h1 className="centered-title">Sevenger Clicker</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <div className="centered-content">
-                        <button onClick={handleRestartGame}>Restart Game</button>
+                        <button className="button" onClick={handleSaveScore}> Save Score</button>
+                    </div>
+                    <div className="centered-content">
+                        <button className="button" onClick={handleRestartGame}> Restart Game </button>
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
 
-
-export default Game3
+export default Game3;
