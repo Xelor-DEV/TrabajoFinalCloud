@@ -1,8 +1,11 @@
-#main-header{
-    background-color: var(--color1);
-    color: var(--color-blanco);
+#main-header {
+    background-color: transparent; /* O usa 'white' para fondo blanco */
+    color: black; /* Cambia el color de las letras a negro */
+    margin-bottom: 20px;
+    margin-top: 20px; /* Ajusta el margen inferior según sea necesario */
 }
 
-#main-header p{
-    margin-bottom: 0;
+#main-header h1,
+#main-header p {
+    color: black; /* Asegura que los elementos h1 y p tengan el color negro */
 }

@@ -1,8 +1,9 @@
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { useEffect } from "react";
+import "./styles.css"; // Asegúrate de importar el archivo CSS
 
 function Game4() {
-    const { unityProvider, sendMessage, isLoaded } = useUnityContext({
+    const { unityProvider, sendMessage, isLoaded, unload } = useUnityContext({
         loaderUrl: "/FruitsCatch.loader.js",
         dataUrl: "/FruitsCatch.data.unityweb",
         frameworkUrl: "/FruitsCatch.framework.js.unityweb",
@@ -24,6 +25,12 @@ function Game4() {
         if (isLoaded) {
             sendUserId();
         }
+
+        return () => {
+            if (isLoaded) {
+                unload();
+            }
+        };
     }, [isLoaded]);
 
     return (
@@ -33,7 +40,7 @@ function Game4() {
                     <h1 className="centered-title">Fruits Catch</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <div className="centered-content">
-                        <button onClick={handleRestartGame}>Restart (Game Over Only)</button>
+                        <button className="button" onClick={handleRestartGame}>Restart (Game Over Only)</button>
                     </div>
                 </div>
             </div>

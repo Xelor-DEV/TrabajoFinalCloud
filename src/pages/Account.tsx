@@ -1,52 +1,59 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import BASE_URL from "../services/WebServices.tsx";
+import "./Account.css";
 
 const Account: React.FC = () => {
     const navigate = useNavigate();
     const username = localStorage.getItem("username");
 
-    const cerrarSesion = () => {
+    const logout = () => {
         localStorage.removeItem("userId");
         localStorage.removeItem("username");
         window.dispatchEvent(new Event('storage'));
         navigate("/");
     };
 
-    const eliminarCuenta = async () => {
+    const deleteAccount = async () => {
         const userId = localStorage.getItem("userId");
         if (!userId) return;
 
-        const rutaServicio = `${BASE_URL}/db_delete_user_game.php`;
+        const serviceRoute = `${BASE_URL}/db_delete_user_game.php`;
         let formData = new FormData();
         formData.append("user_id", userId);
 
         try {
-            const response = await fetch(rutaServicio, { method: "POST", body: formData });
+            const response = await fetch(serviceRoute, { method: "POST", body: formData });
             const result = await response.json();
 
             if (result.error) {
                 alert(`Error: ${result.error}`);
             } else {
-                alert("Cuenta eliminada exitosamente");
-                cerrarSesion();
+                alert("Account successfully deleted");
+                logout();
             }
         } catch (error) {
-            console.error("Error en la conexión:", error);
-            alert("Error en la conexión al servidor.");
+            console.error("Connection error:", error);
+            alert("Server connection error.");
         }
     };
 
     if (!username) {
-        return <p>Logea primero</p>;
+        return (
+            <div className="account-container text-center">
+                <p className="login-message">Please log in first</p>
+            </div>
+        );
     }
 
     return (
-        <div>
-            <p>Bienvenido {username}</p>
-            <button onClick={cerrarSesion} className="btn btn-primary">Cerrar sesión</button>
-            <button onClick={() => navigate("/Update")} className="btn btn-secondary">Actualizar datos</button>
-            <button onClick={eliminarCuenta} className="btn btn-danger">Eliminar cuenta</button>
+        <div className="account-container text-center">
+            <h1 className="mb-4">Welcome, {username}</h1>
+            <div className="btn-group-vertical">
+                <button onClick={() => navigate("/Update")} className="btn btn-secondary btn-lg mb-2">Update data</button>
+                <button onClick={logout} className="btn btn-primary btn-lg mb-2">Log out</button>        
+                <button onClick={deleteAccount} className="btn btn-danger btn-lg">Delete account</button>
+            </div>
         </div>
     );
 };

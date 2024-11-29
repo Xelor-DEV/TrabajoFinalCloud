@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import BASE_URL from "../services/WebServices.tsx";
+import "./formStyles.css";
 
 const Register: React.FC = () => {
     const navigate = useNavigate();
@@ -24,57 +25,53 @@ const Register: React.FC = () => {
             if (result.error) {
                 alert(`Error: ${result.error}`);
             } else {
-                alert("Registro exitoso");
+                alert("Registration successful");
                 navigate("/Login");
             }
         } catch (error) {
-            console.error("Error en la conexión:", error);
-            alert("Error en la conexión al servidor.");
+            console.error("Connection error:", error);
+            alert("Server connection error.");
         }
     };
 
     const loggedInUsername = localStorage.getItem("username");
 
     if (loggedInUsername) {
-        return <p>Tienes una sesión iniciada, cierra sesión primero {loggedInUsername}</p>;
+        return <p>You are already logged in, please log out first {loggedInUsername}</p>;
     }
 
     return (
-        <section className="padded">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4"></div>
-                    <div className="col-md-4">
-                        <h2 className="text-center">Registrarse</h2>
-                        <form onSubmit={registrarUsuario}>
-                            <div className="mb-2">
-                                <input type="text" className="form-control" required
-                                    name="usuario" placeholder="Usuario" />
-                            </div>
-                            <div className="mb-2">
-                                <input type="email" className="form-control" required
-                                    name="email" placeholder="Email" />
-                            </div>
-                            <div className="mb-2">
-                                <input type="password" className="form-control" required id="txtClave"
-                                    name="clave" placeholder="Contraseña" />
-                                <input type="checkbox" className="form-check-input"
-                                    onClick={(event) => {
-                                        const target = event.target as HTMLInputElement;
-                                        document.getElementById("txtClave")?.setAttribute("type",
-                                            target.checked ? "text" : "password");
-                                    }} />
-                                <label className="form-check-label">&nbsp;Mostrar contraseña</label>
-                            </div>
-                            <div className="mb-2">
-                                <button type="submit" className="btn btn-primary w-100">
-                                    Registrarse &gt;
-                                </button>
-                            </div>
-                        </form>
+        <section className="form-container">
+            <div className="form-content">
+                <h2 className="form-title">Register</h2>
+                <form onSubmit={registrarUsuario}>
+                    <div className="form-group">
+                        <input type="text" className="form-control" required
+                            name="usuario" placeholder="Username" />
                     </div>
-                    <div className="col-md-4"></div>
-                </div>
+                    <div className="form-group">
+                        <input type="email" className="form-control" required
+                            name="email" placeholder="Email" />
+                    </div>
+                    <div className="form-group">
+                        <input type="password" className="form-control" required id="txtClave"
+                            name="clave" placeholder="Password" />
+                        <div className="form-check">
+                            <input type="checkbox" className="form-check-input"
+                                onClick={(event) => {
+                                    const target = event.target as HTMLInputElement;
+                                    document.getElementById("txtClave")?.setAttribute("type",
+                                        target.checked ? "text" : "password");
+                                }} />
+                            <label className="form-check-label">&nbsp;Show password</label>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <button type="submit" className="form-button">
+                            Register
+                        </button>
+                    </div>
+                </form>
             </div>
         </section>
     );

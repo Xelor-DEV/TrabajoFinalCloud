@@ -1,0 +1,25 @@
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-message {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-group-vertical .btn {
+    width: 1000px; /* Aumentado el ancho de los botones */
+    height: 80px; /* Aumentado la altura de los botones */
+    font-size: 1.5rem; /* Aumentado el tamaño de la fuente */
+    margin-bottom: 15px; /* Añadido margen inferior para espacio entre botones */
+}

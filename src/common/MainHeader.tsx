@@ -1,11 +1,15 @@
+import banner1 from '../assets/images/Logo.png';
+import './MainHeader.css'; // Importa el archivo CSS
+
 function MainHeader() {
     return (
         <header id="main-header">
             <div className='container'>
-                <h1>Tecsup</h1>
-                <p>Desarrollo de Videojuegos en Soluciones Cloud</p>
+                <img src={banner1} alt="Logo" style={{ float: 'left', marginRight: '10px', width: '100px', height: 'auto' }} />
+                <h1>Xelor-DEV</h1>
+                <p>Portfolio with some mini-games developed connected to a database</p>
             </div>
         </header>
     )
 }
-export default MainHeader
+export default MainHeader;

@@ -1,0 +1,65 @@
+.form-title {
+    font-size: 2rem; /* Aumentar el tamaño de la fuente */
+    font-weight: bold; /* Hacer el texto en negrita */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    outline: 2px solid #007bff; /* Agregar outline a los contenedores */
+}
+
+.form-check-input {
+    margin-right: 10px;
+    outline: 2px solid #007bff; /* Agregar outline al checkbox */
+}
+
+.centered-content {
+    text-align: center;
+    margin: 10px;
+}
+
+.centered-title {
+    color: #FFA07A;
+    font-size: 3rem;
+    margin-bottom: 20px; /* Reducir el margen inferior */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000; /* Contorno negro */
+}
+
+.centered-unity {
+    width: 640px; /* Ajustar el ancho del componente Unity */
+    height: 360px; /* Ajustar la altura del componente Unity */
+    margin-bottom: 5px;
+    border: 2px solid #FFA07A; /* Añadir un borde al componente Unity */
+    border-radius: 10px; /* Añadir borde redondeado para un aspecto más atractivo */
+}
+
+.button {
+    background-color: #FFA07A;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000; /* Contorno negro */
+}
+
+.button:hover {
+    background-color: #fa6c34;
+}

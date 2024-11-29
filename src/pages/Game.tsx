@@ -1,8 +1,9 @@
-import {Unity, useUnityContext} from "react-unity-webgl";
+import { Unity, useUnityContext } from "react-unity-webgl";
 import { useEffect } from "react";
+import "./styles.css"; // Asegúrate de importar el archivo CSS
 
 function Game() {
-    const {  unityProvider, sendMessage, isLoaded } = useUnityContext({
+    const { unityProvider, sendMessage, isLoaded, unload } = useUnityContext({
         loaderUrl: "/SpaceWar.loader.js",
         dataUrl: "/SpaceWar.data.unityweb",
         frameworkUrl: "/SpaceWar.framework.js.unityweb",
@@ -27,6 +28,12 @@ function Game() {
         if (isLoaded) {
             sendUserId();
         }
+
+        return () => {
+            if (isLoaded) {
+                unload();
+            }
+        };
     }, [isLoaded]);
 
     return (
@@ -36,18 +43,15 @@ function Game() {
                     <h1 className="centered-title">SpaceWar</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <div className="centered-content">
-                        <button onClick={handleRestartGame}>Restart (Game Over Only)</button>
+                        <button className="button" onClick={handleRestartGame}>Restart (Game Over Only)</button>
                     </div>
                     <div className="centered-content">
-                        <button onClick={handlePause}>Pause (Only Playing, Not at Game Over)</button>
+                        <button className="button" onClick={handlePause}>Pause (Only Playing, Not at Game Over)</button>
                     </div>
-
                 </div>
             </div>
-
         </>
     );
 }
 
-
-export default Game
+export default Game;

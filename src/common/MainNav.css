@@ -1,0 +1,35 @@
+/* MainNav.css */
+.navbar {
+    background-color: #FFA07A !important; /* Naranja pastel */
+}
+
+.navbar .nav-link {
+    color: #FFFFFF !important; /* Letras en blanco */
+    /* Añadimos un contorno a las letras */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000; /* Contorno negro */
+}
+
+.navbar .nav-link:hover {
+    color: #FFDAB9 !important; /* Letras en un tono más claro al pasar el ratón */
+    /* Añadimos un contorno a las letras */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000; /* Contorno negro */
+}
+
+.navbar .nav-item.active .nav-link {
+    font-weight: bold; /* Negrita para resaltar */
+    /* Añadimos un contorno a las letras */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000; /* Contorno negro */
+    border-bottom: 2px solid #FFFFFF; /* Línea inferior para resaltar */
+}

@@ -1,5 +1,12 @@
-#main-footer{
-    background-color: var(--color-gris-oscuro);
-    color: var(--color-gris-claro);
+/* MainFooter.css */
+#main-footer {
+    background-color: #FFA07A; /* Naranja pastel */
+    color: #FFFFFF; /* Letras en blanco */
     padding: 45px 0;
+    /* Añadimos un contorno a las letras */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px  1px 0 #000000,
+         1px  1px 0 #000000; /* Contorno negro */
 }

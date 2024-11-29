@@ -18,13 +18,12 @@
 }
 
 .centered-unity {
-  width: 800px;
-  height: 600px;
-  border: 2px solid #d70b0b; /* Add a border to the Unity component */
-  border-radius: 10px; /* Add border radius for a cooler look */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  width: 1280px;
+  height: 720px;
+  border: 2px solid #d70b0b; /* Añadir un borde al componente Unity */
+  border-radius: 10px; /* Añadir borde redondeado para un aspecto más atractivo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añadir una sombra sutil */
 }
-
 .navbar {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
