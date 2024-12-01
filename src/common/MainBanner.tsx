@@ -16,38 +16,38 @@ function MainBanner() {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={banner1} className="d-block w-100" alt="..."/>
+                    <img src={banner1} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>EVE VR Online</h5>
-                        <p>Amazing VR space game</p>
+                        <h5>SpaceWar</h5>
+                        <p>2D top-down spaceship shooter game</p>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={banner2} className="d-block w-100" alt="..."/>
+                    <img src={banner2} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Virtual Reality Headset </h5>
-                        <p>New VR set, no cables</p>
+                        <h5>Yu-Gi-Oh Memory Game</h5>
+                        <p>2D card matching game, find all pairs quickly</p>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={banner3} className="d-block w-100" alt="..."/>
+                    <img src={banner3} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Computer Cloud Gaming</h5>
-                        <p>Cloud Solutions</p>
+                        <h5>Sevenger Clicker</h5>
+                        <p>Sevenger clicker game that evolves with each click</p>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={banner4} className="d-block w-100" alt="..."/>
+                    <img src={banner4} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>New VR Experience</h5>
-                        <p>Immersive VR world</p>
+                        <h5>Fruits Catch</h5>
+                        <p>2D side-scrolling fruit collection game with a time limit</p>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={banner5} className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Advanced Gaming Setup</h5>
-                        <p>High performance gaming</p>
+                    <img src={banner5} className="d-block w-100" alt="..." />
+                    <div className="carousel-caption d-none d-md-block text-black">
+                        <h5>Bounce Invaders</h5>
+                        <p>2D breakout-style game with enemies falling from the sky</p>
                     </div>
                 </div>
             </div>

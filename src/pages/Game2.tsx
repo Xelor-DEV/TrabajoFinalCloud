@@ -4,10 +4,10 @@ import "./styles.css"; // Asegúrate de importar el archivo CSS
 
 function Game2() {
     const { unityProvider, sendMessage, isLoaded, unload } = useUnityContext({
-        loaderUrl: "/sds.loader.js",
-        dataUrl: "/sds.data.unityweb",
-        frameworkUrl: "/sds.framework.js.unityweb",
-        codeUrl: "/sds.wasm.unityweb",
+        loaderUrl: "/Yu-Gi-OhMemoryGame.loader.js",
+        dataUrl: "/Yu-Gi-OhMemoryGame.data.unityweb",
+        frameworkUrl: "/Yu-Gi-OhMemoryGame.framework.js.unityweb",
+        codeUrl: "/Yu-Gi-OhMemoryGame.wasm.unityweb",
     });
 
     function handleRestartGame() {
@@ -40,14 +40,12 @@ function Game2() {
                     <h1 className="centered-title">Yu-Gi-Oh Memory Game</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <div className="centered-content">
-                        <button onClick={handleRestartGame}>Restart Game</button>
+                        <button className="button" onClick={handleRestartGame}>Restart Game</button>
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
 
-
-export default Game2
+export default Game2;

@@ -43,7 +43,7 @@ function Game() {
                     <h1 className="centered-title">SpaceWar</h1>
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <div className="centered-content">
-                        <button className="button" onClick={handleRestartGame}>Restart (Game Over Only)</button>
+                        <button className="button" onClick={handleRestartGame}>Restart</button>
                     </div>
                     <div className="centered-content">
                         <button className="button" onClick={handlePause}>Pause (Only Playing, Not at Game Over)</button>
