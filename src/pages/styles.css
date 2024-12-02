@@ -1,3 +1,9 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .form-title {
     font-size: 2rem; /* Aumentar el tamaño de la fuente */
     font-weight: bold; /* Hacer el texto en negrita */
@@ -14,6 +20,16 @@
 .form-check-input {
     margin-right: 10px;
     outline: 2px solid #007bff; /* Agregar outline al checkbox */
+}
+
+.centered-container {
+    position: relative;
+    background-color: #333; /* Change to your preferred background color */
+    color: #fff; /* Change to your preferred text color */
+    min-height: 100vh; /* Ensure the container takes the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
 }
 
 .centered-content {
